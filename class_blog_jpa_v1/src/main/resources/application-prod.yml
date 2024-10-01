@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  jpa:
+    show-sql: true        # 실행되는 SQL 쿼리를 콘솔에 출력
+    hibernate:
+      ddl-auto: create     # 애플리케이션 실행 시 데이터베이스 테이블을 새로 생성 (운영 환경에서는 update나 validate 권장)
+      format_sql: true     # 출력되는 SQL 쿼리를 읽기 쉽게 포맷팅
+    database-platform: org.hibernate.dialect.H2Dialect  # H2 데이터베이스에 맞는 Hibernate 방언 설정
+    properties:
+      hibernate:
+        highlight_sql: true   # SQL 쿼리에서 키워드를 강조 (색상 적용)
+
+  h2:
+    console:
+      enabled: true # H2 콘솔을 활성화하는 설정 (true로 설정 시 웹 콘솔 사용 가능)
+    path: /h2-console # H2 콘솔에 접근할 수 있는 경로 설정 (기본 경로는 /h2-console)
+
+  # 디버깅을 위한 로깅 설정
+  logging:
+    level:
+      org:
+        springframework:
+          jdbc: DEBUG          # JDBC 관련 로그 출력
+          hibernate:
+            SQL: DEBUG           # Hibernate SQL 쿼리 출력
+            type:
+              descriptor.sql: TRACE  # SQL 쿼리에 바인딩된 파라미터 값 출력

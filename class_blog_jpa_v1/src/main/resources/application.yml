@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: class_blog_jap_v1
+    
+  server:
+    port: 8080
+    
+  datasource:
+    url: jdbc:mysql://localhost:3306/jpa_demo?useSSL=false&serverTimeZone=Asia/Seoul
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: asd123
+    
+  profiles:
+    active: dev # 기본 활성화 프로파일을 dev로 설정한다. 만약 prod 쓰고 싶으면 'prod' 적으면 됨
+    
+    
+    

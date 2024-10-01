@@ -31,4 +31,8 @@ logging:
           description:
             sql:
               BasicBinder: TRACE
-       
+
+# Nyan-Cat
+config:
+  title: MY APPLICATION
+  author: MOSEOH
